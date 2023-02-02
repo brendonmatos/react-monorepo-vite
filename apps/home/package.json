@@ -1,0 +1,11 @@
+{
+  "name": "home",
+  "private": true,
+  "version": "0.0.0",
+  "main": "main.jsx",
+  "scripts": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  }
+}
