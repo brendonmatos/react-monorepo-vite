@@ -6,7 +6,8 @@
     "apps/*"
   ],
   "scripts": {
-    "start": "npm run dev -w core",
+    "start": "npm run dev -w dx",
+    "build": "npm run build -w dx",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {

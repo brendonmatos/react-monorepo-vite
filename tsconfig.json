@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "types": [
+      "core/auto-imports.d.ts",
+    ]
+  }
+}
