@@ -1,44 +1,62 @@
 /// <reference types="vitest" />
 
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react-swc'
-import AutoImport from 'unplugin-auto-import/vite'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react-swc";
+import AutoImport from "unplugin-auto-import/vite";
+import Inspect from "vite-plugin-inspect";
+import { optimizeImports } from "unplugin-rewrite-imports";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  root: './src',
+  root: "./src",
   plugins: [
+    optimizeImports.vite({
+      optimize: [
+        {
+          moduleName: "utils",
+          imports: [
+            {
+              exportedAs: "getBrazil",
+              importedAs: "getBrazil",
+              rewrite: "utils/brazil",
+            },
+          ],
+        },
+      ],
+    }),
     react(),
+    Inspect(),
+
     AutoImport({
       imports: [
-        'react',
+        "react",
         {
-          'react': [
+          react: [
             ["default", "React"],
             ["Suspense", "Suspense"],
-          ]
+          ],
         },
-        'react-router-dom',
+        "react-router-dom",
         {
-          '@testing-library/react': [
-            'render',
-            'screen',
-            'waitFor',
-            'renderHook',
-            'act',
-          ]
-        }
+          "@testing-library/react": [
+            "render",
+            "screen",
+            "waitFor",
+            "renderHook",
+            "act",
+          ],
+        },
       ],
       dts: true,
       include: [/\.jsx?$/, /\.tsx?$/],
     }),
-
   ],
   test: {
     globals: true,
-    environment: 'happy-dom',
+    environment: "happy-dom",
+    dir: "../",
   },
   build: {
-    minify: false
-  }
-})
+    minify: false,
+  },
+});

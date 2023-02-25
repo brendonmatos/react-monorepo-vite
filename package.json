@@ -6,9 +6,12 @@
     "apps/*"
   ],
   "scripts": {
+    "dev": "npm run dev -w dx",
     "start": "npm run dev -w dx",
     "build": "npm run build -w dx",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "test": "npm run test -w dx",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "preinstall": "npm run update-exports -w utils"
   },
   "devDependencies": {
     "@types/react": "^18.0.27",
@@ -26,6 +29,10 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.8.0",
     "sort-by": "^0.0.2"
+  },
+  "resolutions": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "packageManager": "npm@8.19.1"
 }

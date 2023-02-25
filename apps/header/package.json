@@ -1,9 +1,8 @@
 {
-  "name": "dashboard",
+  "name": "header",
   "private": true,
   "version": "0.0.0",
-  "main": "Dashboard.jsx",
-  "type": "module",
+  "main": "main.jsx",
   "scripts": {},
   "peerDependencies": {
     "react": "*",

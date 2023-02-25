@@ -1,0 +1,18 @@
+{
+  "name": "utils",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json",
+    "./brazil": "./src/brazil.js",
+    "./do-not-import-me": "./src/do-not-import-me.js",
+    "./hello": "./src/hello.js",
+    "./index": "./src/index.js",
+    "./world": "./src/world.js"
+  },
+  "scripts": {
+    "update-exports": "node ./bin/update-exports.mjs"
+  }
+}

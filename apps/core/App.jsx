@@ -1,6 +1,7 @@
 
 import { NoMatch } from './NoMatch';
 export const Loader = () => <div>Loading...</div>
+export const Header = lazy(() => import('header'))
 export const Counter = lazy(() => import('counter'))
 export const Dashboard = lazy(() => import('dashboard'))
 export const About = lazy(() => import('about'))
@@ -23,8 +24,7 @@ export const routes = [
 
 export const App = () => {
   return <div>
-    <span>Core App</span>
-
+    <Header></Header>
     <Suspense fallback={<Loader />}>
       <ConfiguredRoutes />
     </Suspense>
